@@ -25,20 +25,12 @@ if (cluster.isMaster) {
     app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
     app.get('/', (req, res) => res.send('Hello World!'));
-    app.get('/test', test);
     app.post('/template/send', sendMessage);
     app.post('/template/sendAsync', sendMessageAsync);
 
     app.listen(3000, () => console.log('Service Start'));
 }
 
-
-
-function test(req, res) {
-    res.send('test');
-
-    console.log('aaaaaaa');
-}
 
 function validateTemplate(req) {
    var data = {
